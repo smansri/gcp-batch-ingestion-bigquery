@@ -1,18 +1,18 @@
 terraform {
   backend "gcs" {
     bucket = "tf-state-gcp-batch-ingestion"
-    region = "australia-southeast1-a"
+    region = "europe-west1"
     prefix = "terraform/state"
   }
 }
 
 provider "google" {
-  project = "grey-sort-challenge"
-  region = "australia-southeast1-a"
+  project = "cloud-proxy-sql-showcase"
+  region = "europe-west1"
 }
 
 resource "google_storage_bucket" "funky-bucket" {
   name = "batch-pipeline"
   storage_class = "REGIONAL"
-  location  = "australia-southeast1"
+  location  = "europe-west1"
 }
