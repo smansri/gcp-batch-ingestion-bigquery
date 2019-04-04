@@ -22,7 +22,7 @@ dependencies {
 }
 
 run {
-    args = ["--project=grey-sort-challenge",
+    args = ["--project=cloud-proxy-sql-showcase",
             "--runner=DataflowRunner",
             "--maxNumWorkers=5",
             "--numWorkers=1",
