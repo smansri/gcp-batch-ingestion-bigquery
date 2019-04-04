@@ -11,7 +11,7 @@ provider "google" {
   region = "europe-west3"
 }
 
-resource "google_storage_bucket" "funky-bucket-sma" {
+resource "google_storage_bucket" "sma-funky-bucket" {
   name = "batch-pipeline"
   storage_class = "REGIONAL"
   location  = "europe-west3"
