@@ -29,7 +29,7 @@ steps:
 # 4b. Deploy the Cloud Function that listens to the bucket
 - name: gcr.io/cloud-builders/gcloud
   id: function-deploy
-  args: ['functions', 'deploy', 'goWithTheDataFlow', '--stage-bucket=gs://batch-pipeline-sma', '--trigger-bucket=gs://batch-pipeline-sma']
+  args: ['functions', 'deploy', 'goWithTheDataFlow', '--runtime', 'nodejs6', '--stage-bucket=gs://batch-pipeline-sma', '--trigger-bucket=gs://batch-pipeline-sma']
   dir: 'cloud-function'
   waitFor: ['npm-install-test']
 
