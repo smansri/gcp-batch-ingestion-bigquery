@@ -35,19 +35,15 @@ public class TemplatePipelineTest {
 
         List<String> input = new ArrayList<>();
 
-        input.add("2018,8,13,Wikinews,English,Spanish football: Sevilla signs Aleix Vidal from FC Barcelona,12331");
+        input.add("toto,8,tata");
 
         List<TableRow> output = fnTester.processBundle(input);
 
         Assert.assertThat(output, is(not(empty())));
 
-        Assert.assertThat(output.get(0).get("year"), is(equalTo("2018")));
-        Assert.assertThat(output.get(0).get("month"), is(equalTo("8")));
-        Assert.assertThat(output.get(0).get("day"), is(equalTo("13")));
-        Assert.assertThat(output.get(0).get("wikimedia_project"), is(equalTo("Wikinews")));
-        Assert.assertThat(output.get(0).get("language"), is(equalTo("English")));
-        Assert.assertThat(output.get(0).get("title"), is(equalTo("Spanish football: Sevilla signs Aleix Vidal from FC Barcelona")));
-        Assert.assertThat(output.get(0).get("views"), is(equalTo("12331")));
+        Assert.assertThat(output.get(0).get("title"), is(equalTo("toto")));
+        Assert.assertThat(output.get(0).get("id"), is(equalTo("8")));
+        Assert.assertThat(output.get(0).get("language"), is(equalTo("tata")));
     }
 
     @Test
@@ -55,7 +51,7 @@ public class TemplatePipelineTest {
 
         List<String> input = new ArrayList<>();
 
-        input.add("year,month,day,wikimedia_project,language,title,views");
+        input.add("title,id,language");
 
         List<TableRow> output = fnTester.processBundle(input);
 
